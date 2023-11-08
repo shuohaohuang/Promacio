@@ -19,24 +19,34 @@ namespace Exercicis
             int index = 0;
 
             int[] numArray = { 10, 20, 30, 20, 10, 50, 60, 40, 80, 50, 40 };
-            
-            int[] nonRepeat = new int[numArray.Length];
 
-            bool repeat= false;
-            foreach(int num in numArray) 
-            {  
-                foreach(int num2 in nonRepeat{
-                    repeat = num == num2;
-                }
-                if (repeat==false) 
+            float[] nonRepeat = new float[numArray.Length];
+
+            bool repeat = false;
+            
+
+            for(int i=0; i<numArray.Length; i++)
+            {
+                for(int j=0;j<nonRepeat.Length&& !repeat; j++)
                 {
-                    nonRepeat[index] = num;
+                    if(numArray[i] == nonRepeat[j])
+                    {
+                        repeat = true;
+                    }
+                }
+                if(!repeat) 
+                {
+                   nonRepeat[index] = numArray[i];
                     index++;
                 }
+                repeat = false;
             }
             foreach (int i in nonRepeat)
             {
-                Console.WriteLine(i);
+                if (i != 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
